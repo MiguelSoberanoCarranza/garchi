@@ -6,14 +6,14 @@
       </div>
       <nav class="custom-nav">
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#" @click="(e) => scrollToSection(e, '#inicio')">Inicio</a></li>
+          <li><a href="#" @click="(e) => scrollToSection(e, '#productos')">Productos</a></li>
+          <li><a href="#" @click="(e) => scrollToSection(e, '#contacto')">Contacto</a></li>
         </ul>
       </nav>
     </header>
-    <main class="main-content" style="flex: 1 0 auto;">
-      <section class="hero">
+    <main class="main-content">
+      <section id="inicio" class="hero">
         <div class="hero-content">
           <img src="/assets/totopos-garchi-logo.png" alt="Totopos Garchi" class="hero-logo" />
           <h1 class="hero-title">¡Totopos para conquistar tu paladar!</h1>
@@ -128,10 +128,19 @@ import { IonPage } from '@ionic/vue';
 defineOptions({
   name: 'HomePage'
 });
+
+const scrollToSection = (event: Event, sectionId: string) => {
+  event.preventDefault();
+  const section = document.querySelector(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 html,
 body,
 #app {
@@ -165,11 +174,12 @@ body {
   padding: 0 2rem;
   background: linear-gradient(90deg, #ff6f00, #e65100);
   color: white;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo-container {
@@ -221,7 +231,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh ;
+  height: 100vh;
   text-align: center;
   color: #fff;
   background: linear-gradient(135deg, #ff8a00, #ff0000);
@@ -494,6 +504,10 @@ body {
   margin-top: 0.5rem;
 }
 
+.main-content section {
+  margin-bottom: 4rem;
+}
+
 @media (max-width: 900px) {
   .stats-section {
     flex-direction: column;
@@ -509,5 +523,10 @@ body {
     gap: 1.5rem;
     align-items: center;
   }
+}
+
+.ion-page-custom.scrolled .custom-header {
+  background-color: rgba(255, 111, 0, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 </style>
