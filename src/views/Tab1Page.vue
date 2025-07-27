@@ -14,17 +14,47 @@
 
       <!-- Hero Section -->
       <div class="hero-section">
-        <div class="hero-content">
-          <h1 class="hero-title">Totopos Garchi</h1>
+        <img src="/assets/totopos-garchi-logo.jpg" class="hero-bg" alt="Totopos Garchi" />
+        <div class="hero-overlay">
+          <h1 class="hero-title">¡Bienvenido a Totopos Garchi!</h1>
           <p class="hero-subtitle">"Sin conservadores" - Calidad y sabor garantizados</p>
           <ion-button expand="block" size="large" class="cta-button">
             <ion-icon name="cart-outline" slot="start"></ion-icon>
             ¡Haz tu pedido ahora!
           </ion-button>
         </div>
-        <div class="hero-image">
-          <img src="/assets/totopos-garchi-logo.png" alt="Totopos Garchi" class="hero-img" />
-        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="features-section">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6" size-md="3">
+              <div class="feature-item">
+                <ion-icon name="flame-outline" class="feature-icon"></ion-icon>
+                <h4>Crujientes</h4>
+              </div>
+            </ion-col>
+            <ion-col size="6" size-md="3">
+              <div class="feature-item">
+                <ion-icon name="leaf-outline" class="feature-icon"></ion-icon>
+                <h4>Ingredientes Naturales</h4>
+              </div>
+            </ion-col>
+            <ion-col size="6" size-md="3">
+              <div class="feature-item">
+                <ion-icon name="globe-outline" class="feature-icon"></ion-icon>
+                <h4>Hecho en México</h4>
+              </div>
+            </ion-col>
+            <ion-col size="6" size-md="3">
+              <div class="feature-item">
+                <ion-icon name="rocket-outline" class="feature-icon"></ion-icon>
+                <h4>Envío Rápido</h4>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </div>
 
       <!-- Products Section -->
@@ -94,14 +124,31 @@ import {
 }
 
 .hero-section {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
-  text-align: center;
-
-  color: white;
+  height: 320px;
   margin-bottom: 2rem;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+  border-radius: 15px;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 1rem;
+  color: #fff;
 }
 
 .hero-content {
@@ -119,10 +166,7 @@ import {
   margin-bottom: 2rem;
 }
 
-.hero-img {
-  max-width: 100%;
-  border-radius: 15px;
-}
+
 
 .cta-button {
   --background: #ffffff;
@@ -187,5 +231,21 @@ import {
   --border-radius: 25px;
   max-width: 300px;
   margin: 0 auto;
+}
+
+.features-section {
+  padding: 2rem 1rem;
+  background: #fff;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #ff0000;
+  margin-bottom: 0.5rem;
 }
 </style>
