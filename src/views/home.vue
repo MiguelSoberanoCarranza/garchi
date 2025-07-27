@@ -134,6 +134,7 @@ defineOptions({
 html,
 body,
 #app {
+  --header-height: 5rem;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -158,7 +159,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  height: var(--header-height);
+  padding: 0 2rem;
   background: #ff0000;
   color: white;
   position: fixed;
@@ -217,7 +219,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: calc(100vh - var(--header-height));
   text-align: center;
   color: #fff;
   background: linear-gradient(135deg, #ff9800, #ff0000);
@@ -280,7 +282,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin: 3rem 0 1rem 0;
+  margin: 0;
+  min-height: calc(100vh - var(--header-height));
 }
 
 .stat-item {
@@ -330,8 +333,12 @@ body {
 }
 
 .productos-section {
-  margin: 4rem 0 2rem 0;
+  margin: 0;
   text-align: center;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .productos-title {
