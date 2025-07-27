@@ -131,6 +131,7 @@ defineOptions({
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 html,
 body,
 #app {
@@ -141,6 +142,7 @@ body,
   box-sizing: border-box;
   width: 100vw;
   overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 .ion-page-custom {
@@ -161,7 +163,7 @@ body {
   align-items: center;
   height: var(--header-height);
   padding: 0 2rem;
-  background: #ff0000;
+  background: linear-gradient(90deg, #ff6f00, #e65100);
   color: white;
   position: fixed;
   top: 0;
@@ -222,7 +224,7 @@ body {
   height: calc(100vh - var(--header-height));
   text-align: center;
   color: #fff;
-  background: linear-gradient(135deg, #ff9800, #ff0000);
+  background: linear-gradient(135deg, #ff8a00, #ff0000);
   overflow: hidden;
 }
 
@@ -230,8 +232,10 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('/assets/totopos-garchi-logo.jpg') center/40% no-repeat;
-  opacity: 0.05;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0) 70%),
+    url('/assets/totopos-garchi-logo.jpg') center/40% no-repeat;
+  opacity: 0.1;
 }
 
 .hero-content {
@@ -263,18 +267,19 @@ body {
 .cta-button {
   display: inline-block;
   padding: 0.8rem 1.6rem;
-  background: #fff;
-  color: #ff0000;
+  background: linear-gradient(90deg, #ff6f00, #e65100);
+  color: #fff;
   font-size: 1.2rem;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 30px;
   text-decoration: none;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
 .stats-section {
@@ -391,7 +396,7 @@ body {
 }
 
 .producto-btn {
-  background: #1bbf3a;
+  background: linear-gradient(90deg, #1bbf3a, #0e7c25);
   color: #fff;
   border: none;
   border-radius: 1.5rem;
@@ -400,11 +405,11 @@ body {
   font-size: 1rem;
   margin-top: 0.5rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: filter 0.2s;
 }
 
 .producto-btn:hover {
-  background: #0e7c25;
+  filter: brightness(1.1);
 }
 
 .explorar-btn {
