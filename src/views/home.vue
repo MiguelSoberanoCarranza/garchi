@@ -13,12 +13,14 @@
       </nav>
     </header>
     <main class="main-content" style="flex: 1 0 auto;">
-      <div class="hero">
-        <img src="/assets/totopos-garchi-logo.png" alt="Totopos Garchi" class="hero-logo" />
-        <h1 class="hero-title">Totopos Garchi</h1>
-        <p class="hero-subtitle">"Sin conservadores" - Calidad y sabor garantizados</p>
-        <a href="#contacto" class="cta-button">¡HAZ TU PEDIDO AHORA!</a>
-      </div>
+      <section class="hero">
+        <div class="hero-content">
+          <img src="/assets/totopos-garchi-logo.png" alt="Totopos Garchi" class="hero-logo" />
+          <h1 class="hero-title">¡Totopos para conquistar tu paladar!</h1>
+          <p class="hero-subtitle">Sin conservadores y con el sabor más auténtico</p>
+          <a href="#contacto" class="cta-button">¡HAZ TU PEDIDO AHORA!</a>
+        </div>
+      </section>
       <section class="stats-section">
         <div class="stat-item">
           <div class="stat-icon stat-brown">
@@ -122,6 +124,10 @@
 
 <script setup lang="ts">
 import { IonPage } from '@ionic/vue';
+
+defineOptions({
+  name: 'HomePage'
+});
 </script>
 
 <style scoped>
@@ -207,6 +213,28 @@ body {
 }
 
 .hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #ff9800, #ff0000);
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/assets/totopos-garchi-logo.jpg') center/40% no-repeat;
+  opacity: 0.05;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,36 +242,36 @@ body {
 }
 
 .hero-logo {
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ff0000;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.4rem;
+  margin: 0;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: #ff0000;
-  color: white;
+  padding: 0.8rem 1.6rem;
+  background: #fff;
+  color: #ff0000;
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #ff4d4d;
   transform: scale(1.05);
 }
 
