@@ -1,0 +1,7 @@
+{
+  "name": "totopos-garchi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
