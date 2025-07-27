@@ -206,7 +206,7 @@ body {
 .main-content {
   flex: 1 0 auto;
   background: white;
-  padding: 7rem 2rem 2rem 2rem;
+
   text-align: center;
   overflow-x: hidden;
   width: 100vw;
