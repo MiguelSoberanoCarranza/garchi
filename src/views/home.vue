@@ -219,7 +219,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - var(--header-height));
+  height: 100vh ;
   text-align: center;
   color: #fff;
   background: linear-gradient(135deg, #ff9800, #ff0000);
