@@ -645,13 +645,13 @@ body,
 }
 
 .logo {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   transition: var(--transition);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.8);
+
+  padding: 4px;
 }
 
 .logo:hover {
@@ -796,21 +796,23 @@ body,
 
 .hero-logo-container {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero-logo {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  object-fit: contain;
+
   animation: float 3s ease-in-out infinite;
   transition: var(--transition);
+  background: white;
+  padding: 8px;
 }
 
 .hero-logo-placeholder {
@@ -1496,19 +1498,21 @@ body,
 }
 
 .footer-logo-container {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .footer-logo {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   transition: var(--transition);
+  background: white;
+  padding: 4px;
 }
 
 .footer-logo:hover {
@@ -1705,14 +1709,14 @@ body,
   }
   
   .hero-logo-container {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
   }
   
   .hero-logo,
   .hero-logo-placeholder {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
   }
   
   .hero-placeholder-icon {
