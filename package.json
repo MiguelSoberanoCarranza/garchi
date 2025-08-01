@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
+    "build:prod": "NODE_ENV=production vue-tsc && vite build",
     "preview": "vite preview",
+    "deploy:netlify": "npm run build && netlify deploy --prod --dir=dist",
+    "deploy:vercel": "npm run build && vercel --prod",
     "test:e2e": "cypress run",
     "test:unit": "vitest",
     "lint": "eslint ."
